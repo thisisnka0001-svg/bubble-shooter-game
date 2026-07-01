@@ -16,48 +16,96 @@ font-family:Arial,sans-serif;
 body{
 background:#0f172a;
 color:white;
-text-align:center;
 }
 
-header{
-background:#1e293b;
-padding:20px;
-font-size:30px;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#111827;
+}
+
+.logo{
+font-size:28px;
 font-weight:bold;
+color:#22c55e;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:17px;
 }
 
 .hero{
-padding:60px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:80vh;
+text-align:center;
+padding:20px;
 }
 
 .hero h1{
-font-size:40px;
+font-size:52px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
-margin-bottom:30px;
+font-size:20px;
+color:#cbd5e1;
+max-width:700px;
+margin-bottom:35px;
 }
 
-.btn{
-display:inline-block;
+.button{
 padding:15px 35px;
 background:#22c55e;
 color:white;
 text-decoration:none;
-border-radius:8px;
 font-size:20px;
+border-radius:8px;
+transition:.3s;
 }
 
-.btn:hover{
+.button:hover{
 background:#16a34a;
 }
 
 footer{
-margin-top:80px;
+background:#111827;
 padding:20px;
-background:#1e293b;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+}
+
+nav ul{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:17px;
+}
+
 }
 </style>
 
@@ -65,28 +113,45 @@ background:#1e293b;
 
 <body>
 
-<header>
-🎮 Bubble Shooter Rewards
-</header>
+<nav>
 
-<div class="hero">
+<div class="logo">
+🎮 Bubble Rewards
+</div>
 
-<h1>Welcome!</h1>
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Play</a></li>
+
+<li><a href="#">Leaderboard</a></li>
+
+<li><a href="#">Rewards</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>Play Bubble Shooter & Earn Reward Points</h1>
 
 <p>
-Play Bubble Shooter, earn points and enjoy the game.
+Welcome to Bubble Rewards! Play exciting Bubble Shooter games, collect points, climb the leaderboard, and redeem rewards.
 </p>
 
-<a href="#" class="btn">Play Game</a>
+<a href="#" class="button">🎮 Play Now</a>
 
-</div>
+</section>
 
 <footer>
 
-© 2026 Bubble Shooter Rewards
+© 2026 Bubble Rewards | All Rights Reserved
 
 </footer>
 
 </body>
-
 </html>

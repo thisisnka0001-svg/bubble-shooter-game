@@ -22,7 +22,7 @@ loginBtn.addEventListener("click", async () => {
 
         alert("Login Successful 🎉");
 
-        window.location.href = "play.html";
+      window.location.href = "dashboard.html";
 
     }catch(error){
 

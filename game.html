@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bubble Shooter</title>
+<title>Bubble Rewards - Play</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
 background:#0f172a;
 color:white;
-font-family:Arial;
-text-align:center;
 }
 
 header{
 
 background:#111827;
-padding:20px;
+padding:15px 30px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border-bottom:2px solid #22c55e;
+
+}
+
+.logo{
+
 font-size:30px;
+font-weight:bold;
+
+}
+
+.stats{
+
+display:flex;
+gap:25px;
+font-size:20px;
+
+}
+
+.stats span{
+
+color:#22c55e;
 font-weight:bold;
 
 }
 
 .container{
 
-padding:30px;
+padding:20px;
+text-align:center;
 
 }
 
@@ -44,13 +76,7 @@ background:#1e293b;
 
 border-radius:12px;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:35px;
+overflow:hidden;
 
 }
 
@@ -58,19 +84,39 @@ font-size:35px;
 
 display:inline-block;
 
-margin-top:30px;
+margin-top:20px;
 
-padding:15px 30px;
+padding:14px 28px;
 
 background:#22c55e;
 
+color:white;
+
 text-decoration:none;
 
-color:white;
+font-size:18px;
 
 border-radius:8px;
 
-font-size:18px;
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:#16a34a;
+
+}
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+color:#94a3b8;
+
+font-size:14px;
 
 }
 
@@ -82,7 +128,23 @@ font-size:18px;
 
 <header>
 
-🎮 Bubble Shooter
+<div class="logo">
+🎮 Bubble Rewards
+</div>
+
+<div class="stats">
+
+<div>
+⭐ Score :
+<span id="score">0</span>
+</div>
+
+<div>
+🪙 Coins :
+<span id="coins">0</span>
+</div>
+
+</div>
 
 </header>
 
@@ -91,12 +153,19 @@ font-size:18px;
 <div id="gameArea"></div>
 
 <a class="button" href="dashboard.html">
-⬅ Dashboard
+⬅ Back to Dashboard
 </a>
 
 </div>
 
+<footer>
+
+Bubble Rewards © 2026
+
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+
 <script src="game/game.js"></script>
 
 </body>

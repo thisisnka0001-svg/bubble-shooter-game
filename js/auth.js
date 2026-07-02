@@ -1,3 +1,28 @@
-import { auth, db } from "./firebase.js";
+import { auth } from "./firebase.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
-console.log("✅ Firebase Connected Successfully");
+const registerBtn = document.getElementById("registerBtn");
+
+registerBtn.addEventListener("click", async () => {
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if(email === "" || password === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    try{
+
+        await createUserWithEmailAndPassword(auth,email,password);
+
+        alert("Account Created Successfully 🎉");
+
+    }catch(error){
+
+        alert(error.message);
+
+    }
+
+});

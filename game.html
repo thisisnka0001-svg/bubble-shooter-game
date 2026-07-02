@@ -6,167 +6,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bubble Rewards - Play</title>
+<title>Bubble Rewards - Play Game</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#0f172a;
-color:white;
-}
-
-header{
-
-background:#111827;
-padding:15px 30px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-border-bottom:2px solid #22c55e;
-
-}
-
-.logo{
-
-font-size:30px;
-font-weight:bold;
-
-}
-
-.stats{
-
-display:flex;
-gap:25px;
-font-size:20px;
-
-}
-
-.stats span{
-
-color:#22c55e;
-font-weight:bold;
-
-}
-
-.container{
-
-padding:20px;
-text-align:center;
-
-}
-
-#gameArea{
-
-width:900px;
-max-width:95%;
-height:600px;
-
-margin:auto;
-
-background:#1e293b;
-
-border-radius:12px;
-
-overflow:hidden;
-
-}
-
-.button{
-
-display:inline-block;
-
-margin-top:20px;
-
-padding:14px 28px;
-
-background:#22c55e;
-
-color:white;
-
-text-decoration:none;
-
-font-size:18px;
-
-border-radius:8px;
-
-transition:.3s;
-
-}
-
-.button:hover{
-
-background:#16a34a;
-
-}
-
-footer{
-
-text-align:center;
-
-padding:20px;
-
-color:#94a3b8;
-
-font-size:14px;
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header>
+<div class="topbar">
 
-<div class="logo">
-🎮 Bubble Rewards
-</div>
+    <div class="logo">
+        🎮 Bubble Rewards
+    </div>
 
-<div class="stats">
+    <div class="stats">
 
-<div>
-⭐ Score :
-<span id="score">0</span>
-</div>
+        <div class="box">
+            ⭐ Score
+            <span id="score">0</span>
+        </div>
 
-<div>
-🪙 Coins :
-<span id="coins">0</span>
-</div>
+        <div class="box">
+            🪙 Coins
+            <span id="coins">0</span>
+        </div>
 
-</div>
-
-</header>
-
-<div class="container">
-
-<div id="gameArea"></div>
-
-<a class="button" href="dashboard.html">
-⬅ Back to Dashboard
-</a>
+    </div>
 
 </div>
 
-<footer>
+<div class="game-container">
 
-Bubble Rewards © 2026
+    <canvas
+        id="game"
+        width="271"
+        height="392">
+    </canvas>
 
-</footer>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+<div class="buttons">
 
-<script src="game/game.js"></script>
+    <a href="../dashboard.html" class="btn">
+        ⬅ Dashboard
+    </a>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 

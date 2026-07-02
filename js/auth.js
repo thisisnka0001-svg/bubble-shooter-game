@@ -1,5 +1,14 @@
-import { auth } from "./firebase.js";
-import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+import { auth, db } from "./firebase.js";
+
+import {
+  createUserWithEmailAndPassword,
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+
+import {
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
 const registerBtn = document.getElementById("registerBtn");
 
@@ -20,6 +29,17 @@ registerBtn.addEventListener("click", async () => {
 
         await updateProfile(userCredential.user,{
             displayName:name
+        });
+
+        await setDoc(doc(db,"users",userCredential.user.uid),{
+
+            name:name,
+            email:email,
+            points:0,
+            wallet:0,
+            role:"user",
+            createdAt:new Date()
+
         });
 
         alert("Account Created Successfully 🎉");
